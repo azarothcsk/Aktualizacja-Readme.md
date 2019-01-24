@@ -111,7 +111,11 @@ def deploy_contracts(w3: WEB3, master_acct: Tuple, ctr_paths: Dict, challenge_pa
     tx_receipt_load_addr = w3.eth.waitForTransactionReceipt(tx_hash_addr_instance)
     assert tx_receipt_load_addr.status, 'Failed to load PlasmaAddress failed.'
 
-    args = (challenge_params['bond-in-wei'], challenge_params['maturity-period'], challenge_params['challenge-window'])
+    args = (challenge_params['bond-in-wei'],
+            challenge_params['maturity-period'],
+            challenge_params['challenge-window']
+            )
+
     kwargs = {'from': master_acct[0].address}
 
     w3.personal.unlockAccount(master_acct[0].address, master_acct[1])
@@ -147,7 +151,7 @@ def deploy_contracts(w3: WEB3, master_acct: Tuple, ctr_paths: Dict, challenge_pa
     return receipts
 
 
-def reset_parity_dev_node(container_name: str = 'dock-mvp') -> str:
+def reset_parity_dev_node(container_name) -> str:
     '''
         TODO: add running tests and swtich to pydocker
     '''

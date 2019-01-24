@@ -1,7 +1,7 @@
 ### Dock Plasma Cash Contracts  
 
 #### NOTE:     
-**Contracts are forked from [Loom Network](https://github.com/loomnetwork/plasma-cash). Please check each file in contracts for the applicable license. Rule of thumb: Loom-based code is GPL3, if in doubt, it's GPL3, the rest is MIT.**  
+**Contracts are forked from [Loom Network](https://github.com/loomnetwork/plasma-cash). Please check each file in contracts for the applicable license.**  
 
 **Contracts are beta and have not undergone a third-party review yet. Tread with care.**  
 
@@ -16,8 +16,7 @@ $ pip install -r requirements.txt
 <br>
 #### Compiling the contracts  
 
-Follow [Populous](https://populus.readthedocs.io/en/latest/deploy.html),  [Truffle](https://truffleframework.com/docs/truffle/getting-started/compiling-contracts), [py-solc](https://github.com/ethereum/py-solc), the [solidity](https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html) instructions to install and rn solc. At this time, you want to stay < 0.5 and 0.4.24 is a good choice.  
-From the command line:  
+Follow [Populous](https://populus.readthedocs.io/en/latest/deploy.html),  [Truffle](https://truffleframework.com/docs/truffle/getting-started/compiling-contracts), [py-solc](https://github.com/ethereum/py-solc), the [solidity](https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html) instructions to install and run solc. At this time, you want to stay < 0.5 and 0.4.24 is a good choice. From the command line:  
 
 ```bash
 $ solc --version # should be 0.4.24
@@ -25,9 +24,9 @@ $ solc -o build --combined-json abi,bin --optimize  --optimize-runs=1 --evm-vers
 ```  
 Note that the evm-version default is _byzantium_ but with a fork afoot, you may want to keep this setting in mind.  
 
-For a quick start, see the _compile_to_json.py_ script, which utilizes py-solc and assumes solc  0.4.24 is installed. If it is not, after ```$ pip install py-solc```, run ```$ python -m solc.install v0.4.25```. At least on OSX, the commandline installation, especially if another, newer version is already in place, seems to work reasonably flawless. If you have higher version installed with brew, you may need to unlink.  
+For a quick start, see the _compile\_to\_json.py_ script, which utilizes py-solc and assumes solc  0.4.24 is installed. If it is not, after ```$ pip install py-solc```, run ```$ python -m solc.install v0.4.24```. At least on OSX, the commandline installation, especially if another, newer version is already in place, seems to work reasonably well. If you have a higher version already installed with brew, for example, you may need to unlink.  
 
-Ok. now that we got a working solidity setup in place you can either compile from the command line or utilize the _compile_to_json.py_ script. If you want to use the deployment scripts in _deploy.py_, you may want to utilize the python script to keep changes to a minimum. 
+With a working solidity setup in place, you can either compile from the command line or utilize the _compile\_to\_json.py_ script. If you want to use the deployment scripts in _deploy.py_, you may want to utilize the script to keep changes to a minimum. 
 ```$ python compile_to_json.py``` creates a _json_ dir and decomposes solc's _complete.json_ into individual *.json files including the abi and bin output, if applicable.  
 
 <br>
