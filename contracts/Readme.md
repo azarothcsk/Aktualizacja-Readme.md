@@ -1,6 +1,6 @@
 ### Dock Plasma Cash Contracts  
 
-#### NOTE:     
+#### NOTE:  
 **Contracts are forked from [Loom Network](https://github.com/loomnetwork/plasma-cash). Please check each file in contracts for the applicable license.**  
 
 **Contracts are beta and have not undergone a third-party review yet. Tread with care.**  
@@ -13,7 +13,6 @@ In order to use the enclosed python scripts, you need Python version >= 3.7.0 an
 $ pip install -r requirements.txt
 ```  
 
-<br>
 #### Compiling the contracts  
 
 Follow [Populous](https://populus.readthedocs.io/en/latest/deploy.html),  [Truffle](https://truffleframework.com/docs/truffle/getting-started/compiling-contracts), [py-solc](https://github.com/ethereum/py-solc), the [solidity](https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html) instructions to install and run solc. At this time, you want to stay < 0.5 and 0.4.24 is a good choice. From the command line:  
@@ -27,15 +26,14 @@ Note that the evm-version default is _byzantium_ but with a fork afoot, you may 
 For a quick start, see the _compile\_to\_json.py_ script, which utilizes py-solc and assumes solc  0.4.24 is installed. If it is not, after ```$ pip install py-solc```, run ```$ python -m solc.install v0.4.24```. At least on OSX, the commandline installation, especially if another, newer version is already in place, seems to work reasonably well. If you have a higher version already installed with brew, for example, you may need to unlink.  
 
 With a working solidity setup in place, you can either compile from the command line or utilize the _compile\_to\_json.py_ script. If you want to use the deployment scripts in _deploy.py_, you may want to utilize the script to keep changes to a minimum. 
-```$ python compile_to_json.py``` creates a _json_ dir and decomposes solc's _complete.json_ into individual *.json files including the abi and bin output, if applicable.  
+``` $ python compile_to_json.py``` creates a _json_ dir and decomposes solc's _complete.json_ into individual *.json files including the abi and bin output, if applicable.  
 
-<br>
 #### Deploying the contracts  
 **Contracts are beta and have not undergone a third-party review yet. Tread with care.**  
 
 The _deploy.py_ script includes a fairly generic **deploy** function as well as a few support functions and a parameterized **quick_deploy** function. Note that if you want to work with the contracts post deployment, you want to persist the personal and contract accounts as well as the transaction receipts for future reference. Moreover, there are a few initialization parameters you may want to adjust depending on your use case. See _deploy.py_ for more details and definitely before running it.  
 
-Note that **quick_deploy** assumes you have access to a running (dockerized) parity dev node. You don't have to have docker by it sure helps. Assuming you do:  
+Note that **quick_deploy** assumes you have access to a running (dockerized) parity dev node. You don't have to have docker but it sure helps. Assuming you do:  
 
 ```bash 
 $ docker pull parity/parity:stable	
@@ -59,7 +57,7 @@ should do. Make sure you replace <_your container name_> with the actual name an
 
 With more scaffolding out of the way, it's time to deploy the contracts:  
 
-```python 
+```bash
 $ python deploy.py
 ```  
 
