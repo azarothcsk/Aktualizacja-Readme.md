@@ -6,39 +6,30 @@
 **Contracts are beta and have not undergone a third-party review yet. Tread with care.**  
 
 ##### To Do  
-- [ ] Clean up lint errors in contracts, including snake case  
-- [ ] Add deployment script  
+- [ ] Clean up lint errors in contracts, including snake case
+- [x] Add compile script    
+- [x] Add deployment script  
 - [ ] Add tests  
 - [ ] List testnet addresses
- 
+- [ ] Add SDK
+
 
 #### Overview  
-The Dock Plasma Cash contracts are a customized to support a single-validator, single-operator, master-slave deployment. This makes for a compact, reasonably cost-effective, solution suitable for a variety of paywall scenarios.  
+The Dock Plasma Cash contracts are customized to support a single-validator, single-operator deployment. This makes for a compact, reasonably cost-effective, solution suitable for a variety of paywall and exchange scenarios including one-to-many and many-to-many. Hence, this solution can be quite appealing to 'owner-operators' ranging from IoT to more traditional data exchanges.  
 
-The addresses for the test contracts deployed on Ropsten are:
-Plasma: xxx  
-ERC20:  xxx  
-ERC721: xxx   
+In the future, we plan to release the Dock SDK supporting the configuration, deployment, and management of the Dock single validator, single operator solution in a highly scalable master/slave configuration.  
 
-
-#### Compiling  
-
-Follow [Populous](https://populus.readthedocs.io/en/latest/deploy.html),  [Truffle](https://truffleframework.com/docs/truffle/getting-started/compiling-contracts), or [py-solc](https://github.com/ethereum/py-solc) directions or follow the solidity [instructions](https://solidity.readthedocs.io/en/v0.4.24/installing-solidity.html). At this time, you want stay < 0.5.  
-From the command line:   
-```solc -o build --combined-json abi,bin --optimize  --optimize-runs=1 --evm-version byzantium contracts/*.sol```  
-Note that the evm-version default is byzantium but with a fork afoot, you may want to keep this setting in mind.  
+If you are in the IoT or digital goods data exchange space and interested in working with the Dock SDK, please leave a note in the Issues section.  
 
 
+#### Compiling & Deploying Contracts  
+
+See the [Readme.md](https://github.com/getdock/plasma-cash-contracts/tree/master/contracts) in _contracts/_ for further information.  
 
 
-
-
-
- 
-
-
-
-
-
-
-
+#### Testnet Accounts  
+The addresses for the test contracts deployed on Ropsten and Kovan, respectively, are:
+Plasma:   NA, NA  
+ERC20:    NA, NA  
+ERC721:   NA, NA  
+DoCheck:  NA, NA  
